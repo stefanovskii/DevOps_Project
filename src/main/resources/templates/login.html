@@ -1,0 +1,23 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Login form</title>
+    <link href="/main.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+<form th:method="POST" th:action="@{/login}">
+    <label for='username'>Name:</label>
+    <input id='username' type='text' name='username'/>
+    <label for='password'>Password:</label>
+    <input id='password' type='password' name='password'/>
+
+    <div th:if="${hasError}" class="error">
+        <div th:text="${error}"></div>
+    </div>
+
+    <input id="submit" type="submit" th:value="Submit">
+
+</form>
+<a href="/register" class="btn btn-block btn-light">Register here</a>
+</body>
+</html>
